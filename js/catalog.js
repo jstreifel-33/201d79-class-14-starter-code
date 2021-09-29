@@ -28,13 +28,15 @@ function handleSubmit(event) {
   event.preventDefault();
   product = event.target.items.value;
   quantity = parseInt(event.target.quantity.value);
-
+if (quantity && quantity>0){
   // Do all the things ...
   addSelectedItemToCart();
   cart.saveToLocalStorage();
   updateCounter();
   updateCartPreview();
-
+} else{
+  alert('Please Enter A Valid Quantity.')
+}
 }
 
 // TODO: Add the selected item and quantity to the cart
