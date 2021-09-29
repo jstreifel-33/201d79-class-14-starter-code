@@ -1,8 +1,55 @@
 /* TODO: Make it awesome */
 /* Gee thanks */
-
-
-
+header h1{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: xx-large;
+  text-align: center;
+  font-weight: bold;
+}
+.card h1{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: x-large;
+  text-align: start;
+  font-weight: bold;
+}
+nav{
+  float: right;
+  display: flex;
+  flex-direction: row;
+  width: 150px;
+}
+nav li{
+  display: inline-block;
+  padding: 15px;
+  font-size: large;
+  font-weight: bold; 
+}
+img{
+  max-height: 150px;
+  max-width: 150px;
+  padding: 20px 20px 0px 20px;
+}
+form{  
+  width: 50vw;
+  margin: auto;
+  margin-top: 30px;
+}
+label{
+  font-weight: bold;
+  margin-left: 5px;
+}
+fieldset{
+  display: flex;
+  flex-direction:column;
+  border: thin solid black;
+}
+input{
+  border: thin solid black;
+}
+legend{
+  font-weight: bolder;
+  font-size: large;
+}
 .confirm{
   position:absolute;
   top: 50vh;
@@ -15,6 +62,11 @@
   animation-name: null;
   animation-duration: 1s;
   animation-iteration-count: 3;
+}
+td{
+  padding-left: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
 }
 
 @keyframes confirm{
