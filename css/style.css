@@ -1,5 +1,6 @@
 /* TODO: Make it awesome */
 /* Gee thanks */
+
 header h1{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: xx-large;
@@ -50,7 +51,8 @@ legend{
   font-weight: bolder;
   font-size: large;
 }
-.confirm{
+
+#confirm{
   position:absolute;
   top: 50vh;
   left:50vw;
