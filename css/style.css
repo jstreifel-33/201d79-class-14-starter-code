@@ -1,6 +1,42 @@
 /* TODO: Make it awesome */
 /* Gee thanks */
 
+/* COLORS */
+:root{
+  --light-green: #A6A867;
+  --dark-green: #14281D;
+  --purple: #9E788F;
+  --white: #E9EBF8;
+  --brown: #7A6563;
+}
+
+body{
+  background-color: var(--dark-green);
+  color: var(--white);
+  margin: 10px;
+}
+
+header{
+  background-color: var(--brown);
+  border: medium solid var(--light-green);
+  height: 80px;
+  width:100%;
+}
+
+main header{
+  height:40px;
+}
+
+main{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: solid medium var(--light-green);
+}
+
+footer{
+  background-color: var(--brown);
+  border: medium solid var(--light-green);
+}
 header h1{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: xx-large;
@@ -18,6 +54,7 @@ nav{
   display: flex;
   flex-direction: row;
   width: 150px;
+  padding-bottom: 20px;
 }
 nav li{
   display: inline-block;
@@ -42,7 +79,8 @@ label{
 fieldset{
   display: flex;
   flex-direction:column;
-  border: thin solid black;
+  border: medium solid var(--light-green);
+  background-color: var(--purple);
 }
 input{
   border: thin solid black;
@@ -53,6 +91,7 @@ legend{
 }
 
 #confirm{
+  text-align: center;
   position:absolute;
   top: 50vh;
   left:50vw;
