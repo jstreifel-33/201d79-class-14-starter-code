@@ -90,9 +90,8 @@ function renderForm(){
   phone.id = 'phone';
 
   let creditCard = document.createElement('input');
-  creditCard.type = 'number';
   creditCard.id = 'creditCard';
-  creditCard.maxLength = '16';
+  creditCard.maxLength = 16;
 
   let custNameLabel = document.createElement('label');
   custNameLabel.innerText = 'Name: ';
