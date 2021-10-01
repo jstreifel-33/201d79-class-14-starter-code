@@ -34,6 +34,7 @@ if (quantity && quantity>0){
   cart.saveToLocalStorage();
   updateCounter();
   updateCartPreview();
+  makeVisible2();
 } else{
   alert('Please Enter A Valid Quantity.')
 }
@@ -75,3 +76,26 @@ catalogForm.addEventListener('submit', handleSubmit);
 // Before anything else of value can happen, we need to fill in the select
 // drop down list in the form.
 populateForm();
+
+function renderConfirm(){
+  let confirm = document.createElement('div');
+  confirm.class = 'confirm';
+  confirm.innerText = 'ADDED TO CART!'
+  let parentEl = document.getElementById('cartContents');
+  parentEl.append(confirm);
+}
+
+renderConfirm();
+
+function makeVisible2(event){
+  event.preventDefault();
+  console.log('show confirm')
+  let confirm = document.querySelector('input:last-child');
+  confirm.style.visibility = 'visible';
+  confirm.style.animationName = 'confirm';
+
+  setTimeout(function(){
+    confirm.style.visibility = 'hidden';
+    confirm.style.animationName = 'null';
+  }, 3000);
+}

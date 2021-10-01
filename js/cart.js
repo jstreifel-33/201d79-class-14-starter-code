@@ -72,6 +72,8 @@ renderCart();
 function renderForm(){
   let parentEl = document.getElementById('cart-container');
   let orderForm = document.createElement('form');
+  orderForm.addEventListener('submit', makeVisible)
+
   let orderField = document.createElement('fieldset');
   let orderLegend = document.createElement('legend');
   orderLegend.innerText = 'Billing Information';
@@ -120,6 +122,7 @@ function renderForm(){
   let process = document.createElement('input');
   process.type = 'submit';
   process.value = 'Process Order';
+  //process.addEventListener('submit', makeVisible)
  
   parentEl.appendChild(orderForm);
   orderForm.appendChild(orderField);
@@ -142,3 +145,25 @@ function renderForm(){
 }
 
 renderForm();
+
+function renderConfirm(){
+  let confirm = document.createElement('div');
+  confirm.id = 'confirm';
+  confirm.innerText = 'ORDER CONFIRMED!'
+  let parentEl = document.getElementById('cart-container');
+  parentEl.append(confirm);
+}
+
+renderConfirm();
+
+function makeVisible(event){
+  event.preventDefault();
+  console.log('show confirm')
+  let confirm = document.getElementById('confirm');
+  confirm.style.visibility = 'visible';
+  confirm.style.animationName = 'confirm';
+  setTimeout(function(){
+    confirm.style.visibility = 'hidden';
+    confirm.style.animationName = 'null';
+  }, 3000);
+}

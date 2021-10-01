@@ -1,1 +1,31 @@
 /* TODO: Make it awesome */
+/* Gee thanks */
+
+
+
+.confirm{
+  position:absolute;
+  top: 50vh;
+  left:50vw;
+  height:10vh;
+  width:20vw;
+  background-color: green;
+
+  visibility: hidden;
+  animation-name: null;
+  animation-duration: 1s;
+  animation-iteration-count: 3;
+}
+
+@keyframes confirm{
+  0%{
+    background-color:green;
+  }
+  50%{
+    background-color: yellow;
+    transform: rotate3d(1,1,1,45deg);
+  }
+  100%{
+    background-color:green;
+  }
+}
