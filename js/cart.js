@@ -43,11 +43,17 @@ function showCart() {
     quantityCell.innerText = cart.items[i][1];
     cartRow.appendChild(quantityCell);
 
+    let imageCell = document.createElement('img');
+    imageCell.setAttribute('src', cart.items[i][0].filePath);
+    cartRow.appendChild(imageCell);
+
     let itemCell = document.createElement('td');
     itemCell.innerText = cart.items[i][0].name;
     cartRow.appendChild(itemCell);
     // TODO: Add the TR to the TBODY and each of the TD's to the TR
     cartTable.appendChild(cartRow);
+
+
   }
 
 }
