@@ -35,7 +35,7 @@ function showCart() {
     let cartRow = document.createElement('tr');
     // TODO: Create a TD for the delete link, quantity,  and the item
     let deleteCell = document.createElement('td');
-    deleteCell.innerHTML = `<button class="delete" name="${cart.items[i][0].name}">X</button>`;
+    deleteCell.innerHTML = `<button class="delete" name="${cart.items[i][0].name}">X Delete this Item</button>`;
     deleteCell.addEventListener("onClick", removeItemFromCart);
     cartRow.appendChild(deleteCell);
 
@@ -73,6 +73,7 @@ function renderForm(){
   let parentEl = document.getElementById('cart-container');
   let orderForm = document.createElement('form');
   orderForm.addEventListener('submit', makeVisible)
+  orderForm.id = 'orderForm';
 
   let orderField = document.createElement('fieldset');
   let orderLegend = document.createElement('legend');
@@ -94,6 +95,7 @@ function renderForm(){
   let creditCard = document.createElement('input');
   creditCard.id = 'creditCard';
   creditCard.maxLength = 16;
+  creditCard.minLength = 16;
 
   let custNameLabel = document.createElement('label');
   custNameLabel.innerText = 'Name: ';
@@ -162,8 +164,12 @@ function makeVisible(event){
   let confirm = document.getElementById('confirm');
   confirm.style.visibility = 'visible';
   confirm.style.animationName = 'confirm';
+
   setTimeout(function(){
     confirm.style.visibility = 'hidden';
     confirm.style.animationName = 'null';
   }, 3000);
+
+  //reset form
+  document.getElementById('orderForm').reset();
 }
