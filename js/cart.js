@@ -35,27 +35,24 @@ function showCart() {
     let cartRow = document.createElement('tr');
     // TODO: Create a TD for the delete link, quantity,  and the item
     let deleteCell = document.createElement('td');
-    deleteCell.innerHTML = `<a class="delete" name="${cart.items[i][0].name}">X</a>`;
+    deleteCell.innerHTML = `<button class="delete" name="${cart.items[i][0].name}">X</button>`;
     deleteCell.addEventListener("onClick", removeItemFromCart);
     cartRow.appendChild(deleteCell);
-
-    let quantityCell = document.createElement('td');
-    quantityCell.innerText = cart.items[i][1];
-    cartRow.appendChild(quantityCell);
 
     let imageCell = document.createElement('img');
     imageCell.setAttribute('src', cart.items[i][0].filePath);
     cartRow.appendChild(imageCell);
+
+    let quantityCell = document.createElement('td');
+    quantityCell.innerText = cart.items[i][1];
+    cartRow.appendChild(quantityCell);
 
     let itemCell = document.createElement('td');
     itemCell.innerText = cart.items[i][0].name;
     cartRow.appendChild(itemCell);
     // TODO: Add the TR to the TBODY and each of the TD's to the TR
     cartTable.appendChild(cartRow);
-
-
   }
-
 }
 
 function removeItemFromCart(event) {
@@ -71,3 +68,78 @@ function removeItemFromCart(event) {
 
 // This will initialize the page and draw the cart on screen
 renderCart();
+
+function renderForm(){
+  let parentEl = document.getElementById('cart-container');
+  let orderForm = document.createElement('form');
+  let orderField = document.createElement('fieldset');
+  let orderLegend = document.createElement('legend');
+  orderLegend.innerText = 'Billing Information';
+
+  let custName = document.createElement('input');
+  custName.id = 'custName';
+  let street = document.createElement('input');
+  street.id = 'street';
+  let city = document.createElement('input');
+  city.id = 'city';
+  let state = document.createElement('input');
+  state.id = 'state';
+  let zip = document.createElement('input');
+  zip.id = 'zip';
+  let phone = document.createElement('input');
+  phone.id = 'phone';
+
+  let creditCard = document.createElement('input');
+  creditCard.type = 'number';
+  creditCard.id = 'creditCard';
+  creditCard.maxLength = '16';
+
+  let custNameLabel = document.createElement('label');
+  custNameLabel.innerText = 'Name: ';
+  custNameLabel.for = 'custName';
+  let streetLabel = document.createElement('label');
+  streetLabel.innerText = 'Address: ';
+  streetLabel.for = 'street';
+  let cityLabel = document.createElement('label');
+  cityLabel.innerText = 'City: ';
+  cityLabel.for = 'city';
+  let stateLabel = document.createElement('label');
+  stateLabel.innerText = 'State: ';
+  stateLabel.for = 'state';
+  let zipLabel = document.createElement('label');
+  zipLabel.innerText = 'ZIP: '
+  zipLabel.for = 'zip';
+  let phoneLabel = document.createElement('label');
+  phoneLabel.innerText = 'Phone Number: ';
+  phoneLabel.for = 'phone';
+
+  let creditCardLabel = document.createElement('label');
+  creditCardLabel.innerText = 'Credit Card: ';
+  creditCardLabel.for = 'creditCard';
+
+
+  let process = document.createElement('input');
+  process.type = 'submit';
+  process.value = 'Process Order';
+ 
+  parentEl.appendChild(orderForm);
+  orderForm.appendChild(orderField);
+  orderField.appendChild(orderLegend);
+  orderField.appendChild(custNameLabel);
+  orderField.appendChild(custName);
+  orderField.appendChild(streetLabel);
+  orderField.appendChild(street);
+  orderField.appendChild(cityLabel);
+  orderField.appendChild(city);
+  orderField.appendChild(stateLabel);
+  orderField.appendChild(state);
+  orderField.appendChild(zipLabel);
+  orderField.appendChild(zip);
+  orderField.appendChild(phoneLabel);
+  orderField.appendChild(phone);
+  orderField.appendChild(creditCardLabel);
+  orderField.appendChild(creditCard);
+  orderField.appendChild(process);
+}
+
+renderForm();
