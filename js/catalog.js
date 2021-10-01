@@ -80,6 +80,7 @@ populateForm();
 function renderConfirm(){
   let confirm = document.createElement('div');
   confirm.class = 'confirm';
+  confirm.id = 'confirm'
   confirm.innerText = 'ADDED TO CART!'
   let parentEl = document.getElementById('cartContents');
   parentEl.append(confirm);
@@ -87,10 +88,10 @@ function renderConfirm(){
 
 renderConfirm();
 
-function makeVisible2(event){
-  event.preventDefault();
+function makeVisible2(){
   console.log('show confirm')
-  let confirm = document.querySelector('input:last-child');
+  let confirm = document.getElementById('confirm');
+  console.log(confirm);
   confirm.style.visibility = 'visible';
   confirm.style.animationName = 'confirm';
 
